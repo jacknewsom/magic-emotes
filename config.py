@@ -1,0 +1,2 @@
+EMOTE_DIRECTORY = './emotes/'
+FILE_EXTENSION = 'png'
