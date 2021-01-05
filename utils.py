@@ -1,4 +1,4 @@
-from config import EMOTE_DIRECTORY, FILE_EXTENSION, SUPPORTED_CONTENT_EMOTES, SUPPORTED_STYLE_EMOTES
+from config import EMOTE_DIRECTORY, FILE_EXTENSION
 from styles import supported_styles
 import os
 
