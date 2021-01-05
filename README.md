@@ -1,2 +1,2 @@
-Server for hosting Magic-Emotes
+Fancy combinations of twitch emotes 
 
