@@ -5,7 +5,7 @@ import json
 import os
 
 class EZStyle(BaseStyle):
-    ez_glasses_filename = '/home/jack/project/meserver/styles/ez_glasses.png'
+    ez_glasses_filename = '/home/jack/project/meserver/styles/assets/ez_glasses.png'
     ez_glasses_eyes = np.array([[540, 560], [540, 1430]])
 
     delta_ez = ez_glasses_eyes[1] - ez_glasses_eyes[0]
