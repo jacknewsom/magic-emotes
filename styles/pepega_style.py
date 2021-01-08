@@ -5,7 +5,7 @@ import json
 import os
 
 class PepegaStyle(BaseStyle):
-    def __init__(self, metadata_dir='/home/jack/project/meserver/metadata/'):
+    def __init__(self, metadata_dir='./metadata/'):
         super(PepegaStyle, self).__init__()
         if metadata_dir[-1] != '/':
             metadata_dir += '/'

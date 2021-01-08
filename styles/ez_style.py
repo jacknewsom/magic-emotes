@@ -5,14 +5,14 @@ import json
 import os
 
 class EZStyle(BaseStyle):
-    ez_glasses_filename = '/home/jack/project/meserver/styles/assets/ez_glasses.png'
+    ez_glasses_filename = './styles/assets/ez_glasses.png'
     ez_glasses_eyes = np.array([[540, 560], [540, 1430]])
 
     delta_ez = ez_glasses_eyes[1] - ez_glasses_eyes[0]
     theta_ez = np.arctan2(delta_ez[0], delta_ez[1])
     length_ez = np.sqrt(np.sum(np.square(delta_ez)))
 
-    def __init__(self, metadata_dir='/home/jack/project/meserver/metadata/'):
+    def __init__(self, metadata_dir='./metadata/'):
         super(EZStyle, self).__init__()
         if metadata_dir[-1] != '/':
             metadata_dir += '/'
