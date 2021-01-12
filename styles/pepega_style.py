@@ -19,8 +19,7 @@ class PepegaStyle(BaseStyle):
         return os.path.isfile(filename)
 
     def get_magic_emote(self, content, filename):
-        '''We apply the Pepega transform by remapping x pixels like this
-            x -> width*cos(pi(y/height - 1/2))
+        '''We apply the Pepega transform by giving x positions an exponential bump
         '''
         if not self.content_is_supported(content):
             raise NotImplementedError(f'{content} is not supported for this style')
@@ -35,9 +34,9 @@ class PepegaStyle(BaseStyle):
         height = map_y[-1, 0] + 1
         width = map_x[0, -1] + 1
 
-        map_sin = np.sin(-np.pi*map_y / height)
-        map_sin = width * ((1-map_x/width) * map_sin)
-        remap_x = map_sin + map_x
+        gaussian_pdf = lambda x, mu, std: np.exp(-np.square((x-mu)/std))
+        map_exp = gaussian_pdf(map_y, mu=width*5//12, std=width//4)
+        remap_x = map_x - width // 2 * map_exp + width // 6
 
         magic_emote = cv.remap(content_emote, remap_x, map_y, cv.INTER_LINEAR)
 
